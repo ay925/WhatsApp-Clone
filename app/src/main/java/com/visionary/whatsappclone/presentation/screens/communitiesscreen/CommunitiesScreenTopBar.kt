@@ -1,4 +1,4 @@
-package com.visionary.whatsappclone.presentation.screens.updatesscreen
+package com.visionary.whatsappclone.presentation.screens.communitiesscreen
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -12,7 +12,6 @@ import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.SearchBar
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
@@ -30,12 +29,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.visionary.whatsappclone.R
-import com.visionary.whatsappclone.ui.theme.WhatsappGreen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
-fun UpdatesScreenTopBar() {
+fun CommunitiesScreenTopBar() {
     var search by remember { mutableStateOf("") }
     var isSearching by remember { mutableStateOf(false) }
     var expended by remember { mutableStateOf(false) }
@@ -45,19 +43,12 @@ fun UpdatesScreenTopBar() {
             title = {
 
                 Text(
-                    text = "Updates",
+                    text = "Communities",
                     fontWeight = FontWeight.Bold,
                     fontSize = 25.sp,
                 )
             },
             actions = {
-                IconButton(onClick = {}) {
-                    Icon(
-                        modifier = Modifier.size(25.dp),
-                        painter = painterResource(R.drawable.camera),
-                        contentDescription = null
-                    )
-                }
                 Spacer(modifier = Modifier.width(8.dp))
                 IconButton(onClick = {isSearching=true}) {
                     Icon(
@@ -76,7 +67,7 @@ fun UpdatesScreenTopBar() {
                 }
                 DropdownMenu(expanded = expended, onDismissRequest = {expended=false})
                 {
-                    listOf("Status Privacy","Create Channel","Settings").forEach {
+                    listOf("Settings").forEach {
                         DropdownMenuItem(text = {Text(text = it)}, onClick = {
                             expended=false
                         })
@@ -107,5 +98,4 @@ fun UpdatesScreenTopBar() {
             singleLine = true
         )
     }
-
 }
