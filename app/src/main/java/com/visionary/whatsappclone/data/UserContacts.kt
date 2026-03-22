@@ -20,7 +20,7 @@ val contacts=listOf(
     UserContacts("Ajay Devgan","nice", R.drawable.ajay_devgn,"9:13 am"),
     UserContacts("Bhuvan Bam","Hi", R.drawable.bhuvan_bam,"10:18 am"),
     UserContacts("Carry Minati","see you soon", R.drawable.carryminati,"9:10 am"),
-    UserContacts("Techo bhai","Gta V ki video kab aayegi", R.drawable.techno,"5:55 pm"),
+    UserContacts("Techno bhai","Gta V ki video kab aayegi", R.drawable.techno,"5:55 pm"),
     UserContacts("Ajju bhai","free fire ki video kab aayegi", R.drawable.ajju_bhai,"6:12 am"),
     UserContacts("rashmika mandana","Hi", R.drawable.rashmika,"7:11 pm"),
 )
