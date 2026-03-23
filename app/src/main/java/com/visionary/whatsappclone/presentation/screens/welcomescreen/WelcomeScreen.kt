@@ -3,7 +3,6 @@ package com.visionary.whatsappclone.presentation.screens.welcomescreen
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -27,19 +26,20 @@ import androidx.compose.ui.text.TextLinkStyles
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withLink
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.visionary.whatsappclone.R
+import com.visionary.whatsappclone.presentation.navigation.NavRoutes
 import com.visionary.whatsappclone.ui.theme.WhatsappDarkGreen
 import com.visionary.whatsappclone.ui.theme.WhatsappGreen
 
-@Preview(showSystemUi = true)
 @Composable
-fun WelcomeScreen() {
+fun WelcomeScreen(navController: NavController) {
     Column(
         modifier = Modifier.fillMaxSize().padding(20.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -98,9 +98,11 @@ fun WelcomeScreen() {
         Spacer(modifier = Modifier.height(30.dp))
         Button(
             modifier = Modifier.width(300.dp),
-            onClick = {},
+            onClick = {
+                navController.navigate(NavRoutes.UserRegistrationScreen)
+            },
             colors = ButtonDefaults.buttonColors(
-                containerColor = WhatsappDarkGreen
+                containerColor = WhatsappDarkGreen, contentColor = Color.White
             ),
             shape = RoundedCornerShape(5.dp)
 

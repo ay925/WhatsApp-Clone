@@ -9,10 +9,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
@@ -36,8 +34,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.ParagraphStyle
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
@@ -47,13 +43,14 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.visionary.whatsappclone.R
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import com.visionary.whatsappclone.presentation.navigation.NavRoutes
 import com.visionary.whatsappclone.ui.theme.WhatsappDarkGreen
 import com.visionary.whatsappclone.ui.theme.WhatsappGreen
 
-@Preview(showSystemUi = true)
 @Composable
-fun UserRegistrationScreen() {
+fun UserRegistrationScreen(navController: NavController) {
     var dropDownMenuState by remember { mutableStateOf(false) }
     var selectedCountry by remember { mutableStateOf("India") }
     val countries by remember {
@@ -179,7 +176,7 @@ fun UserRegistrationScreen() {
             )
             Spacer(modifier = Modifier.height(40.dp))
             Button(
-                onClick = {},
+                onClick = {navController.navigate(NavRoutes.HomeScreen)},
                 colors = ButtonDefaults.buttonColors(
                     containerColor = WhatsappGreen
                 ),

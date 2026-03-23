@@ -19,15 +19,17 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.visionary.whatsappclone.R
 import com.visionary.whatsappclone.data.StatusContacts
 import com.visionary.whatsappclone.data.channels
 import com.visionary.whatsappclone.presentation.ui_components.BottomNavBar
 import com.visionary.whatsappclone.ui.theme.WhatsappGreen
 
-@Preview
+
 @Composable
-fun UpdatesScreen() {
+fun UpdatesScreen(navController: NavController) {
     Scaffold(
         topBar = {
             Column {
@@ -35,7 +37,7 @@ fun UpdatesScreen() {
                 HorizontalDivider()
             }
         },
-        bottomBar = { BottomNavBar() },
+        bottomBar = { BottomNavBar(navController,"Updates") },
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {},

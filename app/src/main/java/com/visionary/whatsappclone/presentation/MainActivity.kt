@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import com.visionary.whatsappclone.presentation.navigation.NavGraph
 import com.visionary.whatsappclone.ui.theme.WhatsAppCloneTheme
 
 class MainActivity : ComponentActivity() {
@@ -12,7 +13,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             WhatsAppCloneTheme {
-
+                NavGraph()
             }
         }
     }
